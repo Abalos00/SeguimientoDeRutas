@@ -7,9 +7,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MenuActivity extends AppCompatActivity {
 
-    private Button mapButton, historyButton, detailsButton;
+    private Button mapButton, historyButton, detailsButton, logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,8 @@ public class MenuActivity extends AppCompatActivity {
         // Inicializar vistas
         mapButton = findViewById(R.id.mapButton);
         historyButton = findViewById(R.id.historyButton);
-        detailsButton = findViewById(R.id.detailsButton); // Agrega el botón para ver detalles
+        detailsButton = findViewById(R.id.detailsButton);
+        logoutButton = findViewById(R.id.logoutButton); // Agrega el botón para cerrar sesión
 
         // Configurar listener para el botón de ver mapa
         mapButton.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +47,14 @@ public class MenuActivity extends AppCompatActivity {
                 redirectToDetailsActivity();
             }
         });
+
+        // Configurar listener para el botón de cerrar sesión
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signOut();
+            }
+        });
     }
 
     private void redirectToMapActivity() {
@@ -60,5 +71,16 @@ public class MenuActivity extends AppCompatActivity {
         // Agrega la lógica para abrir la actividad de detalles aquí
         Intent intent = new Intent(this, DetailsActivity.class);
         startActivity(intent);
+    }
+
+    private void signOut() {
+        // Cerrar sesión utilizando Firebase Auth
+        FirebaseAuth.getInstance().signOut();
+
+        // Redirigir al MainActivity (página de inicio de sesión)
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
