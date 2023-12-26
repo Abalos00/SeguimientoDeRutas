@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/startTrackingButton"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".MapActivity" />
+
+    <Button
+        android:id="@+id/startTrackingButton"
+        android:layout_width="163dp"
+        android:layout_height="47dp"
+        android:text="Start Tracking"
+        app:layout_constraintBottom_toTopOf="@+id/stopTrackingButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    <Button
+        android:id="@+id/stopTrackingButton"
+        android:layout_width="133dp"
+        android:layout_height="44dp"
+        android:text="Stop Tracking"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/customizeMapButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTrackingButton" />
+
+    <Button
+        android:id="@+id/customizeMapButton"
+        android:layout_width="162dp"
+        android:layout_height="48dp"
+        android:text="Customize Map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopTrackingButton" />
+
+    <Button
+        android:id="@+id/getLocationButton"
+        android:layout_width="172dp"
+        android:layout_height="62dp"
+        android:layout_margin="16dp"
+        android:onClick="onGetLocationButtonClick"
+        android:text="Obtener Ubicación Actual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

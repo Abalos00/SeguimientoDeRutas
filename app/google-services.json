@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604177681935",
+    "project_id": "seguimientomapa-6f673",
+    "storage_bucket": "seguimientomapa-6f673.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604177681935:android:6ec637d14cc183d971dd7a",
+        "android_client_info": {
+          "package_name": "com.example.seguimientoderutas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuFOlkFAO9-zvk8ldDX00XnLbqtipXijs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

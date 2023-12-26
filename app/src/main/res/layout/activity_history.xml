@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <!-- Mapa de la ruta -->
+    <fragment
+        android:id="@+id/historyMap"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/detailsLayout"
+        android:layout_weight="1"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:context=".HistoryActivity" />
+
+    <!-- Información de la ruta -->
+    <LinearLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonsLayout"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Distancia recorrida -->
+        <TextView
+            android:id="@+id/routeDistanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Duración de la ruta -->
+        <TextView
+            android:id="@+id/routeDurationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <!-- Detalles adicionales de la ruta -->
+        <TextView
+            android:id="@+id/distanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/durationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <!-- Agrega el TextView para mostrar las ubicaciones -->
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- Botones en la parte inferior -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Botón 1 (Load More) -->
+        <Button
+            android:id="@+id/loadMoreButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Load More"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Botón 2 (Reset) -->
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:layout_marginStart="8dp" />
+
+        <!-- Añade más botones según sea necesario -->
+    </LinearLayout>
+</RelativeLayout>

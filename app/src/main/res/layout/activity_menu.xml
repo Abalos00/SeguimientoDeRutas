@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MenuActivity"
+    android:background="@drawable/satelite">
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver Mapa"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
+    android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver Historial"
+        android:layout_below="@id/mapButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+    android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/detailsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalles"
+        android:layout_below="@id/historyButton"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
